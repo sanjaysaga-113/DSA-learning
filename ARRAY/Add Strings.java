@@ -7,17 +7,21 @@ The sum of both numbers will be: “26”.*/
 
 import java.util.* ;
 import java.io.*; 
+import java.math.*;
 
 public class Solution {
 
 	public static String stringConcatenation(String num1, String num2) {
 		// Write your code here.
-		 long a=Long.parseLong(num1);
-		 long b=Long.parseLong(num2);
-	     long c=a+b;
-        String s=String.valueOf(c);
-
-		return s;
+        BigInteger a = new BigInteger(num1);
+        BigInteger b = new BigInteger(num2);
+        
+        // Add the numbers
+        BigInteger c = a.add(b);
+        
+        // Convert the result back to a string
+        return c.toString();
 	}
 
 }
+
